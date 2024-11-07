@@ -4,6 +4,6 @@ backend/node_modules
 node_modules/
 # Angular specific
 frontend/node_modules
-# frontend/dist/
+frontend/dist/
 frontend/.angular/
 frontend/.vscode/
