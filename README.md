@@ -1,6 +1,6 @@
 # Task Management App
 
-This is a task manangement application for demo purpose, using Node.js, Angular.js that allows the user to register, login and manage and create various tasks. The project includes user registration, login functionality, and a task manager.
+This is a task manangement application for demo purpose, using Node.js, Angular.js that allows the user to register, login and create various tasks. The project includes user registration, login functionality, and a task manager.
 
 ## Table of Contents
 
