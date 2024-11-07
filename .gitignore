@@ -1,0 +1,9 @@
+backend/node_modules
+frontend/node_modules
+/node_modules
+
+node_modules/
+# Angular specific
+frontend/dist/
+frontend/.angular/
+frontend/.vscode/
