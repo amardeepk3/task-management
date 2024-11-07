@@ -70,9 +70,9 @@ Visit http://localhost:4200/tasks to access the task dashboard and create user t
 
 ## Code Explanation
 
-### Backend
+### 
     Backend: The directory which contains the neccessary API implementation
-    Fronend: Frontent directory which will use to display pages as a frontend.
+    Frontend: Frontent directory which will use to display pages as a frontend.
     JWT: for user authentication
 
 
