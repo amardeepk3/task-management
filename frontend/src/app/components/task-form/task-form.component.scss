@@ -1,0 +1,75 @@
+.task-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 0.75rem;
+  color: #333;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+  width: 100%;
+  max-width: 200px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+.error-message {
+  color: #d32f2f;
+  margin-bottom: 1rem;
+}
+
+
+.error {
+  color: #d32f2f;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #d32f2f;
+}

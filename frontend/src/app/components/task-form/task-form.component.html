@@ -1,0 +1,37 @@
+<div class="task-form">
+  <h2>{{ taskId ? 'Edit Task' : 'New Task' }}</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <label for="title">Title</label>
+    <input id="title" formControlName="title" required />
+    <div *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched">
+      <small class="error" *ngIf="taskForm.get('title')?.errors?.['required']">
+        Title is required.
+      </small>
+      <small class="error" *ngIf="taskForm.get('title')?.errors?.['minlength']">
+        Title must be at least 5 characters long.
+      </small>
+    </div>
+
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div *ngIf="taskForm.get('description')?.invalid && taskForm.get('description')?.touched">
+      <small class="error" *ngIf="taskForm.get('description')?.errors?.['required']">
+        Description is required.
+      </small>
+      <small class="error" *ngIf="taskForm.get('description')?.errors?.['minlength']">
+        Description must be at least 10 characters long.
+      </small>
+    </div>
+
+    <label for="status">Status</label>
+    <select id="status" formControlName="status">
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+    </select>
+    <div *ngIf="taskForm.get('status')?.invalid && taskForm.get('status')?.touched">
+      <small class="error">Status is required.</small>
+    </div>
+
+    <button type="submit" [disabled]="taskForm.invalid">{{ taskId ? 'Update' : 'Create' }} Task</button>
+  </form>
+</div>
