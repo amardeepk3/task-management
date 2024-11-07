@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-task-form',
   standalone: true,
-  imports: [CommonModule,FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './task-form.component.html',
   styleUrl: './task-form.component.scss'
 })
@@ -33,23 +33,28 @@ export class TaskFormComponent {
     this.taskId = this.route.snapshot.paramMap.get('id');
     // console.log(this.taskId)
     if (this.taskId) {
-      this.loadTask();
+      this.loadTask(this.taskId);
     }
   }
 
-  loadTask(): void {
-    this.taskService.getTasks().subscribe((tasks: any[]) => {
-      const task = tasks.find(t => t._id === this.taskId);
+  loadTask(taskId: string): void {
+    this.taskService.getTasksById(taskId).subscribe((task: Task) => {
       if (task) {
         this.taskForm.patchValue(task);
       }
-    });
+    },
+      (error) => {
+        console.log(error)
+      });
 
-    //     this.taskService.getTasksById(this.taskId).subscribe((tasks: any[]) => {
-    //   const task = tasks.find(t => t.id === this.taskId);
+    // this.taskService.getTasks().subscribe((tasks: any[]) => {
+    //   const task = tasks.find(t => t._id === this.taskId);
     //   if (task) {
     //     this.taskForm.patchValue(task);
     //   }
+    // },
+    // (error) => {
+    //   console.log(error)
     // });
 
   }
@@ -65,11 +70,17 @@ export class TaskFormComponent {
     if (this.taskId) {
       this.taskService.updateTask(this.taskId, taskData).subscribe(() => {
         this.router.navigate(['/tasks']);
-      });
+      },
+        (error) => {
+          console.log(error)
+        });
     } else {
       this.taskService.createTask(taskData).subscribe(() => {
         this.router.navigate(['/tasks']);
-      });
+      },
+        (error) => {
+          console.log(error)
+        });
     }
   }
 }

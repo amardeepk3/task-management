@@ -2,6 +2,8 @@ const Task = require('../models/taskModel');
 
 exports.createTask = async (req, res) => {
   try {
+    const io = req.app.get('socketio');
+    console.log("io", io)
     const task = new Task({ ...req.body, user: req.user._id });
     await task.save();
     res.status(201).json(task);
@@ -13,6 +15,16 @@ exports.createTask = async (req, res) => {
 exports.getTasks = async (req, res) => {
   try {
     const tasks = await Task.find({ user: req.user._id });
+    res.status(200).json(tasks);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.getTaskById = async (req, res) => {
+  try {
+    const {id} = req.params;
+    const tasks = await Task.findOne({ user: req.user._id, _id:id });
     res.status(200).json(tasks);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -46,7 +58,7 @@ exports.deleteTask = async (req, res) => {
 
 exports.filterTaskByStatus = async (req, res) => {
   try {
-    // console.log(req.query)
+    // console.log("req.query", req.query)
     const filterquery ={}
     filterquery.user= req.user._id ;
 
@@ -54,7 +66,7 @@ exports.filterTaskByStatus = async (req, res) => {
     if(status){
       filterquery.status = status;
     }
-    console.log(filterquery)
+    // console.log(filterquery)
     const tasks = await Task.find(filterquery);
     res.status(200).json(tasks);
   } catch (error) {

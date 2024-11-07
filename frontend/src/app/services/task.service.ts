@@ -19,8 +19,8 @@ export class TaskService {
     return this.http.get<Task[]>(this.apiUrl);
   }
 
-  getTasksById(id:string): Observable<Task[]> {
-    return this.http.get<Task[]>(`${this.apiUrl}/${id}`);
+  getTasksById(id:string): Observable<Task> {
+    return this.http.get<Task>(`${this.apiUrl}/${id}`);
   }
 
   updateTask(id: string, task: Partial<Task>): Observable<Task> {
