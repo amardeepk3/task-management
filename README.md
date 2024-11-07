@@ -81,5 +81,11 @@ Visit http://localhost:4200/tasks to access the task dashboard and create user t
     Make sure node & npm or yarn is installed on your system
     > git clone https://github.com/amardeepk3/task-management.git
     > cd task-management
+### step-1
+    > cd backend 
     > yarn install || npm install
+    > npm run start
+### step-2
+    >cd frontend
     > yarn run || npm run
+    > ng serve
