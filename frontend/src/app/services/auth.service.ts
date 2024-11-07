@@ -4,12 +4,13 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5000/api'; // Replace with your backend URL
+  private apiUrl = environment.baseUrl // Replace with your backend URL
   private jwtHelper = new JwtHelperService();
 
   constructor(private http: HttpClient, private router: Router) {}
