@@ -53,6 +53,8 @@ On the dashboard home page, add, update, delete and filter by status of tasks.
     mkdir -p backend
     cd backend
     npm init -y
+    npm install
+    npm run start
     ```
 
 ### Frontend Setup
