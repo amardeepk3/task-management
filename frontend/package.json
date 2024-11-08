@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "postinstall": "ng build --configuration production",
     "build": "npm install && npm install @angular/cli && ng build --configuration production  && mv dist/frontend _static",
     "start": "npm install && npm install @angular/cli && npx ng serve",
     "prod": "ng serve --configuration production",

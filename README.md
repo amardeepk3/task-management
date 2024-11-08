@@ -72,6 +72,11 @@ Visit http://localhost:4200/login to login into the application.
 Visit http://localhost:4200/register to register into the application.
 Visit http://localhost:4200/tasks to access the task dashboard and create user tasks.
 
+### For Live Api URL
+Visit https://coral-app-6ybot.ondigitalocean.app/api/auth/login
+Visit https://coral-app-6ybot.ondigitalocean.app/api/auth/register
+Visit https://coral-app-6ybot.ondigitalocean.app/api/tasks
+
 ## Code Explanation
 
 ### 
