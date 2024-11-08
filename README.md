@@ -22,7 +22,7 @@ This is a task manangement application for demo purpose, using Node.js, Angular.
     ▪ Update: Modify a task’s title, description, or status. 
     ▪ Delete: Remove a task.
 - Responsive design for seamless user experience.
-## Real-Time Updates: 
+### Real-Time Updates: 
     Implement real-time task updates using WebSockets, so 
     that any changes to the task list are reflected immediately across all connected 
     clients. 
