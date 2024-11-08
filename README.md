@@ -44,7 +44,6 @@ On the dashboard home page, add, update, delete and filter by status of tasks.
 
     Nodejs: v20.16.0
     AngularJS: 18.2.6
-    React: 18.3.1
     MongoDB: 8.5.2
     cors: 2.8.5
 
@@ -54,6 +53,8 @@ On the dashboard home page, add, update, delete and filter by status of tasks.
     mkdir -p backend
     cd backend
     npm init -y
+    npm install
+    npm run start
     ```
 
 ### Frontend Setup
